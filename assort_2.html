@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Классический чизкейк</title>
+    <link rel="stylesheet" href="ass.css">
+    <link rel="stylesheet" href="glavn.css">
+    <script src="assort.js"></script>
+</head>
+</head>
+<body>
+    <header class="header">
+        <a href="/" class="logo"><img src="" >Мадлен</a>
+        <nav class="nav-menu">
+            <a href="glavn.html" class="nav-link">Главная</a>
+            <a href="assort.html" class="nav-link">Ассортимент</a>
+            <a href="kontact.html" class="nav-link">Контакты</a>
+            <a href="korzina.html" class="nav-link">Корзина</a>
+            <a href="zakaz.html"><button class="order-btn">Заказать</button></a>
+        </nav>
+    </header>
+    <section class="catalog">
+        <h2>Классический чизкейк</h2>
+        <div class="catalog-grid">
+        </div>
+    </section>
+
+    <section class="favorites">
+        <h2>Избранное</h2>
+        <div class="favorites-grid">
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h3>Кондитерская Мадлен</h3>
+                <p>Адрес: г. Оренбург, ул. Гагарина 21</p>
+                <p>Телефон: +7 365 201 94 36</p>
+            </div>
+            <div class="footer-links">
+                <a href="/">Главная</a>
+                <a href="assort.html">Ассортимент</a>
+                <a href="kontact.html">Контакты</a>
+                <a href="korzina.html">Корзина</a>
+            </div>
+            <div class="social-links">
+                <h4>Мы в соцсетях:</h4>
+                <div class="social-icons">
+                    <a href="https://t.me/sweetdreams" class="social-icon">
+                        
+                        <p style="font-size: 20px;">Telegram</p>
+                    </a>
+                    <a href="https://vk.com/sweetdreams" class="social-icon">
+
+                        <p style="font-size: 20px;">VKontakte</p>
+                    </a>
+                    <a href="https://yandex.ru/maps/org/sweet_dreams" class="social-icon">
+
+                        <p style="font-size: 20px;">На карте</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const catalogData = [
+          {
+            id: 1,
+            name: 'Чизкейк Нью-Йорк ',
+            description: 'Нежный классический чизкейк с кремовой текстурой и ярким вкусом сыра хартон, идеально подходит для любителей классики.',
+            price: '90 р. (90 гр)',
+            image: 'img/assort_2/as_1.jpg'
+          },
+          {
+            id: 2,
+            name: 'Чизкейк сникерс',
+            description: 'Шоколадный чизкейк с соленой карамелью и хрустящим арахисом, создает гармоничное сочетание сладости и легкой солености.',
+            price: '140 р. (135-140 гр)',
+            image: 'img/assort_2/as_2.jpg'
+          },
+          {
+            id: 3,
+            name: 'Черничный чизкейк',
+            description: 'Воздушный чизкейк с ягодным вкусом черники, облитый белым шоколадом, дарит наслаждение и свежесть в каждом кусочке.',
+            price: '140 р. (125 гр)',
+            image: 'img/assort_2/as_3.png'
+          },
+          {
+            id: 4,
+            name: 'Тропический чизкейк',
+            description: 'Манговый чизкейк с тонким слоем пюре маракуйя, в белом шоколаде с кокосовой стружкой, переносит на тропические берега.',
+            price: '140 р. (130 гр)',
+            image: 'img/assort_2/as_4.jpg'
+          },
+          {
+            id: 5,
+            name: 'Чизкейк вишня в шоколаде',
+            description: 'Ароматный чизкейк с вишневым наполнителем, покрытый молочным шоколадом, радует любителей ягодных десертов.',
+            price: '140 р. (135 гр)',
+            image: 'img/assort_2/as_5.jpg'
+          },
+          {
+            id: 6,
+            name: 'Фисташковый чизкейк',
+            description: 'Нежный чизкейк с мягким фисташковым вкусом, который идеально подходит для утреннего чаепития.',
+            price: '125 р. (120 гр)',
+            image: 'img/assort_2/as_6.jpg'
+          },
+          {
+            id: 7,
+            name: 'Фисташковый с малиной',
+            description: 'Чизкейк с ярким вкусом фисташки и свежей малины, создает взрывной контраст и радует гурманов своим сочетанием.',
+            price: '135 р. (135 гр)',
+            image: 'img/assort_2/as_7.jpg'
+          },
+          {
+            id: 8,
+            name: 'Малиновый чизкейк',
+            description: 'Восхитительный чизкейк с малиной, обладающий легкой кислинкой и сладким вкусом, подарит солнечное настроение.',
+            price: '120 р. (120-130 гр)',
+            image: 'img/assort_2/as_8.jpg'
+          },
+          {
+            id: 9,
+            name: 'Лимонный с лимонным курдом',
+            description: 'Свежий чизкейк с ярким вкусом лимона и насыщенным лимонным курдом, отлично освежает и подходит для летних дней.',
+            price: '130 р. (120-130 гр)',
+            image: 'img/assort_2/as_9.jpg'
+          },
+        ];
+        </script>
+</body>
+</html>

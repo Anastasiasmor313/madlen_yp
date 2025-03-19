@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ассортимент</title>
+    <link rel="stylesheet" href="ass.css">
+    <link rel="stylesheet" href="glavn.css">
+</head>
+<body>
+    <header class="header">
+        <a href="/" class="logo"><img src="" >Мадлен</a>
+        <nav class="nav-menu">
+            <a href="glavn.html" class="nav-link">Главная</a>
+            <a href="assort.html" class="nav-link">Ассортимент</a>
+            <a href="kontact.html" class="nav-link">Контакты</a>
+            <a href="korzina.html" class="nav-link">Корзина</a>
+            <a href="zakaz.html"><button class="order-btn">Заказать</button></a>
+        </nav>
+    </header>
+    <section class="catalog">
+        <h2>Наш ассортимент</h2>
+        <div class="catalog-grid">
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h3>Кондитерская Мадлен</h3>
+                <p>Адрес: г. Оренбург, ул. Гагарина 21</p>
+                <p>Телефон: +7 365 201 94 36</p>
+            </div>
+            <div class="footer-links">
+                <a href="/">Главная</a>
+                <a href="/news">Новости</a>
+                <a href="/catalog">Ассортимент</a>
+                <a href="/contacts">Контакты</a>
+                <a href="/cart">Корзина</a>
+            </div>
+            <div class="social-links">
+                <h4>Мы в соцсетях:</h4>
+                <div class="social-icons">
+                    <a href="https://t.me/sweetdreams" class="social-icon">
+                        
+                        <p style="font-size: 20px;">Telegram</p>
+                    </a>
+                    <a href="https://vk.com/sweetdreams" class="social-icon">
+
+                        <p style="font-size: 20px;">VKontakte</p>
+                    </a>
+                    <a href="https://yandex.ru/maps/org/sweet_dreams" class="social-icon">
+
+                        <p style="font-size: 20px;">На карте</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const catalogData = [
+          {
+            id: 1,
+            name: 'Чизкейк на палочке',
+            description: 'Уникальный чизкейк в удобной упаковке на палочке. Нежный творожный вкус, идеально сбалансированный с вкусными добавками.',
+            image: 'img/assort_1.jpg',
+            page: 'assort_1.html'
+          },
+          {
+            id: 2,
+            name: 'Классический чизкейк',
+            description: 'Мы предлагаем его в различных вкусах: черничный, сникерс, тропический и малиновый... Каждый кусочек - это праздник для ваших вкусовых рецепторов.',
+            image: 'img/assort_2.png',
+            page: 'assort_2.html'
+          },
+          {
+            id: 3,
+            name: 'Муссовое пирожное',
+            description: 'Несравненно легкие и воздушные муссовые пирожные, которые растают во рту. Разнообразные вкусы сделают каждый десерт особенным и запоминающимся.',
+            image: 'img/assort_3.jpg',
+            page: 'assort_3.html'
+          },
+          {
+            id: 4,
+            name: 'Макарон',
+            description: 'Изысканные французские кондитерские изделия с хрустящей корочкой и нежной начинкой порадуют каждого. В наличии множество вкусов.',
+            image: 'img/assort_4.jpg',
+            page: 'assort_4.html'
+          },
+          {
+            id: 5,
+            name: 'Десерт в стаканчике',
+            description: 'Яркие и аппетитные десерты в стаканчике, идеально подходящие для праздников и встреч с друзьями. Каждый стаканчик - это удивительное сочетание текстур и вкусов.',
+            image: 'img/assort_5.jpg',
+            page: 'assort_5.html'
+          },
+          {
+            id: 6,
+            name: 'Печенье Кукис',
+            description: 'Воздушное и ароматное печенье кукис с хрустящей корочкой и мягкой начинкой. Мы предлагаем разнообразные начинки: классический, красный бархат, фисташковый и другие.',
+            image: 'img/assort_6.jpg',
+            page: 'assort_6.html'
+          },
+          {
+            id: 7,
+            name: 'Моти',
+            description: 'Традиционные японские рисовые пирожные с нежной текстурой и разнообразными начинками. Моти порадует вас своими уникальными вкусами, эффектной подачей и сладкими сюрпризами.',
+            image: 'img/assort_7.jpg',
+            page: 'assort_7.html'
+          },
+          {
+            id: 8,
+            name: 'Прочее',
+            description: 'В нашем ассортименте также представлены разнообразные сладости и уникальные десерты, которые дополнит ваше сладкое наслаждение и атмосферу праздника.',
+            image: 'img/assort_8.jpg',
+            page: 'assort_8.html'
+          }
+          ];
+
+          let favorites = [];
+        
+        function renderCatalog() {
+          const catalogGrid = document.querySelector('.catalog-grid');
+          catalogGrid.innerHTML = catalogData.map(item => `
+            <div class="catalog-card" data-id="${item.id}">
+              <img src="${item.image}" alt="${item.name}" class="catalog-img">
+              <div class="catalog-content">
+                <h3>${item.name}</h3>
+                <p>${item.description}</p>
+          <button class="favorite-btn ${favorites.includes(item.id) ? 'active' : ''}" 
+                  onclick="location.href='${item.page}'">
+            Смотреть
+          </button>
+              </div>
+            </div>
+          `).join('');
+        }
+        // Load favorites from localStorage on page load
+        window.addEventListener('DOMContentLoaded', () => {
+          const savedFavorites = localStorage.getItem('favorites');
+          if (savedFavorites) {
+            favorites = JSON.parse(savedFavorites);
+          }
+          
+          renderCatalog();
+          renderFavorites();
+        });
+        
+        
+        const productContainer = document.querySelector('.product-container');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        let position = 0;
+        let visibleCards = 3;
+        const totalCards = 6;
+        
+        function updateSliderPosition() {
+          productContainer.style.transform = `translateX(${position}px)`;
+        }
+        
+        function updateVisibleCards() {
+          if (window.innerWidth > 1200) {
+            visibleCards = 3;
+          } else if (window.innerWidth > 768) {
+            visibleCards = 2;
+          } else {
+            visibleCards = 1;
+          }
+        }
+        
+        window.addEventListener('resize', () => {
+          updateVisibleCards();
+          position = 0;
+          updateSliderPosition();
+        });
+        
+        updateVisibleCards();
+        
+        nextBtn.addEventListener('click', () => {
+          const cardWidth = document.querySelector('.product-card').offsetWidth;
+          position -= cardWidth;
+          if (Math.abs(position) >= totalCards * cardWidth) {
+            position = 0;
+          }
+          updateSliderPosition();
+        });
+        
+        prevBtn.addEventListener('click', () => {
+          const cardWidth = document.querySelector('.product-card').offsetWidth;
+          position += cardWidth;
+          if (position > 0) {
+            position = -(totalCards - visibleCards) * cardWidth;
+          }
+          updateSliderPosition();
+        });
+        
+        function showModal() {
+          document.getElementById('successModal').style.display = 'flex';
+        }
+        
+        function closeModal() {
+          document.getElementById('successModal').style.display = 'none';
+        }
+        
+        </script>
+</body>
+</html>

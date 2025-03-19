@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заказ</title>
+    <link rel="stylesheet" href="zakaz.css">
+</head>
+<body>
+    <header class="header">
+        <a href="/" class="logo"><img src="" >Мадлен</a>
+        <nav class="nav-menu">
+            <a href="glavn.html" class="nav-link">Главная</a>
+            <a href="assort.html" class="nav-link">Ассортимент</a>
+            <a href="kontact.html" class="nav-link">Контакты</a>
+            <a href="korzina.html" class="nav-link">Корзина</a>
+            <a href="#forma"><button class="order-btn">Заказать</button></a>
+        </nav>
+    </header>
+    <section class="order-form" id="forma">
+        <div class="form-container">
+            <h2>Оформление заказа</h2>
+            <form id="orderForm">
+                <div class="form-group">
+                    <label class="required">ФИО</label>
+                    <input type="text" class="form-control" name="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label class="required">Телефон</label>
+                    <input type="tel" class="form-control" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label class="required">Email</label>
+                    <input type="email" class="form-control" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label class="required">Название продукта</label>
+                    <input type="text" class="form-control" name="productName" required>
+                </div>
+                <div class="form-group">
+                    <label class="required">Количество порций</label>
+                    <input type="number" class="form-control" name="portions" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label class="required">Дата изготовления заказа</label>
+                    <input type="date" class="form-control" name="orderDate" required>
+                </div>
+                <div class="form-group">
+                    <label class="required">Способ получсения заказа</label>
+                    <select class="form-control" name="deliveryMethod" required>
+                        <option value class="option_col">Выберите способ получения заказа</option>
+                        <option value="pickup" class="option_col">Самовывоз</option>
+                        <option value="delivery" class="option_col">Доставка</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Комментарий к заказу</label>
+                    <textarea class="form-control" name="comments" rows="4" style="border: 1px solid #ffffff;"></textarea>
+                </div>
+                <button type="submit" class="order-btn">Заказать</button>
+            </form>
+        </div>
+        <div class="modal" id="successModal">
+            <div class="modal-content">
+                <h3>Спасибо!</h3>
+                <p>Ваш заказ принят! мы свяжемся с вами в ближайшее время для подтверждения.</p>
+                <button class="order-btn" onclick="closeModal()">Закрыть</button>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h3>Кондитерская Мадлен</h3>
+                <p>Адрес: г. Оренбург, ул. Гагарина 21</p>
+                <p>Телефон: +7 365 201 94 36</p>
+            </div>
+            <div class="footer-links">
+                <a href="/">Главная</a>
+                <a href="/news">Новости</a>
+                <a href="/catalog">Ассортимент</a>
+                <a href="/contacts">Контакты</a>
+                <a href="/cart">Корзина</a>
+            </div>
+            <div class="social-links">
+                <h4>Мы в соцсетях:</h4>
+                <div class="social-icons">
+                    <a href="https://t.me/sweetdreams" class="social-icon">
+                        
+                        <p style="font-size: 20px;">Telegram</p>
+                    </a>
+                    <a href="https://vk.com/sweetdreams" class="social-icon">
+
+                        <p style="font-size: 20px;">VKontakte</p>
+                    </a>
+                    <a href="https://yandex.ru/maps/org/sweet_dreams" class="social-icon">
+
+                        <p style="font-size: 20px;">На карте</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<script>document.getElementById('orderForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  const form = e.target;
+  const formData = new FormData(form);
+  let isValid = true;
+  form.querySelectorAll('[required]').forEach(field => {
+    if (!field.value.trim()) {
+      isValid = false;
+      field.classList.add('invalid');
+    } else {
+      field.classList.remove('invalid');
+    }
+  });
+  if (!isValid) {
+    alert('Пожалуйста, заполните все обязательные поля');
+    return;
+  }
+  showModal();
+  form.reset();
+});
+document.querySelectorAll('.form-control').forEach(input => {
+  input.addEventListener('input', function () {
+    if (this.hasAttribute('required')) {
+      if (this.value.trim()) {
+        this.classList.remove('invalid');
+      } else {
+        this.classList.add('invalid');
+      }
+    }
+  });
+});
+const productContainer = document.querySelector('.product-container');
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+let position = 0;
+let visibleCards = 3;
+const totalCards = 6;
+function updateSliderPosition() {
+  productContainer.style.transform = `translateX(${position}px)`;
+}
+function updateVisibleCards() {
+  if (window.innerWidth > 1200) {
+    visibleCards = 3;
+  } else if (window.innerWidth > 768) {
+    visibleCards = 2;
+  } else {
+    visibleCards = 1;
+  }
+}
+window.addEventListener('resize', () => {
+  updateVisibleCards();
+  position = 0;
+  updateSliderPosition();
+});
+updateVisibleCards();
+nextBtn.addEventListener('click', () => {
+  const cardWidth = document.querySelector('.product-card').offsetWidth;
+  if (Math.abs(position) < (totalCards - visibleCards) * cardWidth) {
+    position -= cardWidth;
+    updateSliderPosition();
+  }
+});
+prevBtn.addEventListener('click', () => {
+  const cardWidth = document.querySelector('.product-card').offsetWidth;
+  if (position < 0) {
+    position += cardWidth;
+    updateSliderPosition();
+  }
+});
+function showModal() {
+  document.getElementById('successModal').style.display = 'flex';
+}
+function closeModal() {
+  document.getElementById('successModal').style.display = 'none';
+}</script>
+</body>
+</html>

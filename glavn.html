@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+    <link rel="stylesheet" href="glavn.css">
+</head>
+<body>
+    <header class="header">
+        <a href="/" class="logo"><img src="" >Мадлен</a>
+        <nav class="nav-menu">
+            <a href="#glavn" class="nav-link">Главная</a>
+            <a href="#news" class="nav-link">Новости</a>
+            <a href="assort.html" class="nav-link">Ассортимент</a>
+            <a href="kontact.html" class="nav-link">Контакты</a>
+            <a href="korzina.html" class="nav-link">Корзина</a>
+            <a href="#forma"><button class="order-btn">Заказать</button></a>
+        </nav>
+    </header>
+
+    <section class="hero" id="glavn">
+        <div class="hero-content">
+            <h1>Кондитерская "Мадлен"</h1>
+            <p>Сладкие мечты становятся реальностью</p>
+            <a href="assortiment.html"><button class="order-btn">Смотреть ассортимент</button></a>
+        </div>
+    </section>
+
+    <section class="news" id="news">
+        <h2>Новости</h2>
+        <div class="news-grid">
+            <article class="news-card">
+                <img src="img/novosti_1.jpg" alt="News 1" class="news-img">
+                <div class="news-content">
+                    <h3>Новая коллекция тортов</h3>
+                    <p>Встречайте нашу новую летнюю коллекцию тортов с свежими сезонными ягодами...</p>
+                    <button class="order-btn">Подробнее</button>
+                </div>
+            </article>
+            <article class="news-card">
+                <img src="img/novosti_2.jpg" alt="News 2" class="news-img">
+                <div class="news-content">
+                    <h3>Мастер-класс по выпечке</h3>
+                    <p>Приглашаем новую точку в центре города! Приготовьте вкуснейшие моти с кондитерами...</p>
+                    <button class="order-btn">Подробнее</button>
+                </div>
+            </article>
+            <article class="news-card">
+                <img src="img/novosti_3.jpg" alt="News 3" class="news-img">
+                <div class="news-content">
+                    <h3>Скидки на десерты</h3>
+                    <p>Каждый понедельник скидка 20% на все пирожные из нашей витрины...</p>
+                    <button class="order-btn">Подробнее</button>
+                </div>
+            </article>
+            <article class="news-card">
+                <img src="img/novosti_4.jpg" alt="News 4" class="news-img">
+                <div class="news-content">
+                    <h3>Открываем новую точку!</h3>
+                    <p>Открываем новую точку в центре города! Ждем вас на открытии по адресу...</p>
+                    <button class="order-btn">Подробнее</button>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="products">
+        <h2>Новинки</h2>
+        <div class="product-slider">
+            <button class="slider-btn prev-btn">&#x2190;</button>
+            <div class="product-container">
+                <div class="product-card">
+                    <img src="img/nov_1.jpg" alt="Черничный чизкейк в белом шоколаде " class="product-img">
+                    <h3 class="product-title">Черничный чизкейк в белом шоколаде </h3>
+                </div>
+                <div class="product-card">
+                    <img src="img/nov_2.jpg" alt="Муссовое пирожное" class="product-img">
+                    <h3 class="product-title">Муссовое пирожное клубника-маракуйя</h3>
+                </div>
+                <div class="product-card">
+                    <img src="img/nov_3.jpeg" alt="Макаронс" class="product-img">
+                    <h3 class="product-title">Макаронс черника-ежевика</h3>
+                </div>
+                <div class="product-card">
+                    <img src="img/nov_4.jpg" alt="" class="product-img">
+                    <h3 class="product-title">Эклер с фисташково-малиновой начинкой</h3>
+                </div>
+                <div class="product-card">
+                    <img src="img/nov_5.jpg" alt="" class="product-img">
+                    <h3 class="product-title">Лимоновый тарт</h3>
+                </div>
+                <div class="product-card">
+                    <img src="img/nov_6.jpg" alt="" class="product-img">
+                    <h3 class="product-title">Кейпопс шоколадный</h3>
+                </div>
+            </div>
+            <button class="slider-btn next-btn">&#x2192;</button>
+        </div>
+        <button class="more-btn">Больше</button>
+    </section>
+
+    <section class="order-form" id="forma">
+        <div class="form-container">
+            <h2>Оформление заказа</h2>
+            <form id="orderForm">
+                <div class="form-group">
+                    <label class="required">ФИО</label>
+                    <input type="text" class="form-control" name="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label class="required">Телефон</label>
+                    <input type="tel" class="form-control" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label class="required">Email</label>
+                    <input type="email" class="form-control" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label class="required">Название продукта</label>
+                    <input type="text" class="form-control" name="productName" required>
+                </div>
+                <div class="form-group">
+                    <label class="required">Количество порций</label>
+                    <input type="number" class="form-control" name="portions" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label class="required">Дата изготовления заказа</label>
+                    <input type="date" class="form-control" name="orderDate" required>
+                </div>
+                <div class="form-group">
+                    <label class="required">Способ получсения заказа</label>
+                    <select class="form-control" name="deliveryMethod" required>
+                        <option value class="option_col">Выберите способ получения заказа</option>
+                        <option value="pickup" class="option_col">Самовывоз</option>
+                        <option value="delivery" class="option_col">Доставка</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Комментарий к заказу</label>
+                    <textarea class="form-control" name="comments" rows="4" style="border: 1px solid #ffffff;"></textarea>
+                </div>
+                <button type="submit" class="order-btn">Заказать</button>
+            </form>
+        </div>
+        <div class="modal" id="successModal">
+            <div class="modal-content">
+                <h3>Спасибо!</h3>
+                <p>Ваш заказ принят! мы свяжемся с вами в ближайшее время для подтверждения.</p>
+                <button class="order-btn" onclick="closeModal()">Закрыть</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h3>Кондитерская Мадлен</h3>
+                <p>Адрес: г. Оренбург, ул. Гагарина 21</p>
+                <p>Телефон: +7 365 201 94 36</p>
+            </div>
+            <div class="footer-links">
+                <a href="/">Главная</a>
+                <a href="/news">Новости</a>
+                <a href="/catalog">Ассортимент</a>
+                <a href="/contacts">Контакты</a>
+                <a href="/cart">Корзина</a>
+            </div>
+            <div class="social-links">
+                <h4>Мы в соцсетях:</h4>
+                <div class="social-icons">
+                    <a href="https://t.me/sweetdreams" class="social-icon">
+                        
+                        <p style="font-size: 20px;">Telegram</p>
+                    </a>
+                    <a href="https://vk.com/sweetdreams" class="social-icon">
+
+                        <p style="font-size: 20px;">VKontakte</p>
+                    </a>
+                    <a href="https://yandex.ru/maps/org/sweet_dreams" class="social-icon">
+
+                        <p style="font-size: 20px;">На карте</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>document.getElementById('orderForm').addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const form = e.target;
+        const formData = new FormData(form);
+        let isValid = true;
+        form.querySelectorAll('[required]').forEach(field => {
+          if (!field.value.trim()) {
+            isValid = false;
+            field.classList.add('invalid');
+          } else {
+            field.classList.remove('invalid');
+          }
+        });
+        if (!isValid) {
+          alert('Пожалуйста, заполните все обязательные поля');
+          return;
+        }
+        try {
+          await submitToTelegram(formData);
+          showModal();
+          form.reset();
+        } catch (error) {
+          alert('Произошла ошибка при отправке заказа. Пожалуйста, попробуйте позже.');
+        }
+      });
+      document.querySelectorAll('.form-control').forEach(input => {
+        input.addEventListener('input', function () {
+          if (this.hasAttribute('required')) {
+            if (this.value.trim()) {
+              this.classList.remove('invalid');
+            } else {
+              this.classList.add('invalid');
+            }
+          }
+        });
+      });
+      const productContainer = document.querySelector('.product-container');
+      const prevBtn = document.querySelector('.prev-btn');
+      const nextBtn = document.querySelector('.next-btn');
+      let position = 0;
+      let visibleCards = 3;
+      const totalCards = 6;
+      function updateSliderPosition() {
+        productContainer.style.transform = `translateX(${position}px)`;
+      }
+      function updateVisibleCards() {
+        if (window.innerWidth > 1200) {
+          visibleCards = 3;
+        } else if (window.innerWidth > 768) {
+          visibleCards = 2;
+        } else {
+          visibleCards = 1;
+        }
+      }
+      window.addEventListener('resize', () => {
+        updateVisibleCards();
+        position = 0;
+        updateSliderPosition();
+      });
+      updateVisibleCards();
+      nextBtn.addEventListener('click', () => {
+        const cardWidth = document.querySelector('.product-card').offsetWidth;
+        position -= cardWidth;
+        if (Math.abs(position) >= totalCards * cardWidth) {
+          position = 0;
+        }
+        updateSliderPosition();
+      });
+      prevBtn.addEventListener('click', () => {
+        const cardWidth = document.querySelector('.product-card').offsetWidth;
+        position += cardWidth;
+        if (position > 0) {
+          position = -(totalCards - visibleCards) * cardWidth;
+        }
+        updateSliderPosition();
+      });
+      function showModal() {
+        document.getElementById('successModal').style.display = 'flex';
+      }
+      function closeModal() {
+        document.getElementById('successModal').style.display = 'none';
+      }
+      async function submitToTelegram(formData) {
+        const BOT_TOKEN = '7666104449:AAHJH8W7APKkzHEn-SD6OGwJR2j7bH3MRZU';
+        const CHAT_ID = '1200608860';
+        const API_URL = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+        const message = `📩 Вам новая заявка:
+      <b>ФИО:</b> ${formData.get('fullName')}
+      <b>Телефон:</b> ${formData.get('phone')}
+      <b>E-mail:</b> ${formData.get('email')}
+      <b>Название продукта:</b> ${formData.get('productName')}
+      <b>Количество порций:</b> ${formData.get('portions')}
+      <b>Дата изготовления заказа:</b> ${formData.get('orderDate')}
+      <b>Способ получения заказа:</b> ${formData.get('deliveryMethod')}
+      ${formData.get('comments') ? `<b>Комментарий:</b> ${formData.get('comments')}` : ''}`;
+        try {
+          const response = await fetch(API_URL, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              chat_id: CHAT_ID,
+              text: message,
+              parse_mode: 'HTML'
+            })
+          });
+          if (!response.ok) {
+            throw new Error('Failed to send message');
+          }
+        } catch (error) {
+          console.error('Error sending to Telegram:', error);
+          throw error;
+        }
+      }</script>
+      
+</body>
+</html>
